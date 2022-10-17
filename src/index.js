@@ -1,6 +1,8 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
+import { BrowserRouter } from 'react-router-dom'
+import Context from './Context'
 
 import { App } from './App'
 const client = new ApolloClient({
@@ -10,7 +12,11 @@ const client = new ApolloClient({
 
 createRoot(document.getElementById('app'))
   .render(
-    <ApolloProvider client={client}>
-      <App />
-    </ApolloProvider>
+    <Context.Provider>
+      <ApolloProvider client={client}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ApolloProvider>
+    </Context.Provider>
   )

@@ -17,10 +17,11 @@ export const GlobalStyle = createGlobalStyle`
   button { background: transparent; border: 0; outline: 0 }
 
   body {
-    background: #ffffff;
+    background: #000000;
     height: 100vh;
     margin: 0 auto;
-    max-width: 500px;
+    color: #ffffff;
+    max-width: 550px;
     overscroll-behavior: none;
     width: 100%; 
   }
