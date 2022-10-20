@@ -6,6 +6,7 @@ import { LoginMutation } from '../container/LoginMutation'
 
 export const NotRegisteredUser = () => {
   const { activateAuth } = useContext(Context)
+
   return (
     <>
       <RegisterMutation>
@@ -19,9 +20,7 @@ export const NotRegisteredUser = () => {
                 activateAuth(signup)
               })
             }
-
-            const errorMsg = error && 'El usuario ya existe o hay algún problema. :-('
-
+            const errorMsg = error && 'El usuario ya existe o hay algún problema :-('
             return <UserForm disabled={loading} error={errorMsg} title='Registrarse' onSubmit={onSubmit} />
           }
         }
@@ -38,10 +37,8 @@ export const NotRegisteredUser = () => {
                 activateAuth(login)
               })
             }
-
-            const errorMsg = error && 'La contraseña no es correcta o el usuario no existe. :-('
-
-            return <UserForm disabled={loading} error={errorMsg} title='Iniciar Sesion' onSubmit={onSubmit} />
+            const errorMsg = error && 'La contraseña no es correcta o el usuario no existe :-('
+            return <UserForm disabled={loading} error={errorMsg} title='Iniciar sesión' onSubmit={onSubmit} />
           }
         }
       </LoginMutation>
